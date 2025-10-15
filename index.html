@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenue</title>
+  <style>
+    body {
+      font-family: Epilogue, medium bold;
+      text-align: center;
+      padding: 40px;
+    }
+    #welcome {
+      display: none;
+      font-size: 1.5em;
+      margin-top: 30px;
+    }
+    input {
+      padding: 10px;
+      font-size: 1em;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Entrez votre prénom pour commencer</h2>
+  <input type="text" id="prenom" placeholder="Votre prénom">
+  <br>
+  <button onclick="afficherBienvenue()">Commencer</button>
+
+  <div id="welcome"></div>
+
+  <script>
+    function afficherBienvenue() {
+      const prenom = document.getElementById("prenom").value.trim();
+      if (prenom) {
+        document.getElementById("welcome").innerText = `Bonjour ${prenom}, bienvenue dans Escape Cancer !`;
+        document.getElementById("welcome").style.display = "block";
+      } else {
+        alert("Merci de saisir votre prénom.");
+      }
+    }
+  </script>
+
+</body>
+</html>
